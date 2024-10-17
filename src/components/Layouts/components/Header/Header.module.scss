@@ -114,22 +114,6 @@
     align-items: center;
 }
 
-.login-btn {
-    font-size: 1.6rem;
-    font-weight: bold;
-    height: 36px;
-    width: 100px;
-    padding: 6px 8px;
-    border-radius: 4px;
-    color: #fff;
-    background-color: var(--primary);
-
-    &:hover {
-        cursor: pointer;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
-    }
-}
-
 .menu-action {
     padding-left: 4px;
     margin-left: 16px;

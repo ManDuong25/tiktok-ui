@@ -6,9 +6,12 @@ import {
     faEllipsisVertical,
     faHouse,
     faMagnifyingGlass,
+    faSignIn,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+
+import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
@@ -60,7 +63,8 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <button className={cx('login-btn')}>Đăng nhập</button>
+                    <Button text>Upload</Button>
+                    <Button primary>Đăng nhập</Button>
                     <Tippy
                         interactive
                         visible={false}
