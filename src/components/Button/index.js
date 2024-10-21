@@ -44,13 +44,13 @@ function Button({
 
     console.log(Comp);
     const classes = cx('wrapper', {
-        [className]: className,
+        [className]: true,
         primary,
         outline,
         text,
         rounded,
         disabled,
-        [size]: size,
+        [size]: true,
     });
     return (
         <Comp className={classes} {...props}>

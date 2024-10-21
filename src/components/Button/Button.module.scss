@@ -1,17 +1,17 @@
 .wrapper {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 9px 16px;
+    border-radius: 4px;
     font-size: 1.6rem;
     font-weight: 700;
-    height: 36px;
-    min-width: 100px;
-    padding: 6px 8px;
-    border-radius: 4px;
+    font-family: var(--font-family);
+    cursor: pointer;
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
-    cursor: pointer;
 
     + .wrapper {
         margin-left: 8px;
@@ -27,6 +27,12 @@
 .icon + .title,
 .title + .icon {
     margin-left: 8px;
+}
+
+.icon {
+    display: block;
+    width: 20px;
+    text-align: center;
 }
 
 // Button types

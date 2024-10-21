@@ -2,20 +2,54 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faCircleQuestion,
     faCircleXmark,
+    faEarthAsia,
     faEllipsisVertical,
-    faHouse,
+    faKeyboard,
     faMagnifyingGlass,
-    faSignIn,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
-import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { type } from '@testing-library/user-event/dist/type';
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -28,6 +62,11 @@ function Header() {
             });
         }, 3000);
     }, []);
+
+    // handle
+    const handleMenuChange = (menuItem) => {
+        console.log(menuItem);
+    };
     console.log(images);
     return (
         <header className={cx('wrapper')}>
@@ -64,40 +103,12 @@ function Header() {
                 </Tippy>
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
-                    <Button primary>Đăng nhập</Button>
-                    <Tippy
-                        interactive
-                        visible={false}
-                        render={(attrs) => (
-                            <div className={cx('menu-tool')} tabIndex={-1} {...attrs}>
-                                <PopperWrapper>
-                                    <div className={cx('menu-item')}>
-                                        <FontAwesomeIcon styles={{ fontSize: '18px' }} icon={faHouse} />
-                                        <span>Công cụ dành cho nhà sáng tạo</span>
-                                    </div>
-                                    <div className={cx('menu-item')}>
-                                        <FontAwesomeIcon styles={{ fontSize: '18px' }} icon={faHouse} />
-                                        <span>Tiếng việt</span>
-                                    </div>
-                                    <div className={cx('menu-item')}>
-                                        <FontAwesomeIcon styles={{ fontSize: '18px' }} icon={faHouse} />
-                                        <span>Phản hồi và trợ giúp</span>
-                                    </div>
-                                    <div className={cx('menu-item')}>
-                                        <FontAwesomeIcon styles={{ fontSize: '18px' }} icon={faHouse} />
-                                        <span>Chế độ tối</span>
-                                    </div>
-                                </PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div>
-                            <FontAwesomeIcon
-                                style={{ marginLeft: '28px', fontSize: '20px' }}
-                                icon={faEllipsisVertical}
-                            />
-                        </div>
-                    </Tippy>
+                    <Button primary>Login</Button>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

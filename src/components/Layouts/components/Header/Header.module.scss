@@ -8,7 +8,6 @@
     width: 100%;
     height: var(--default-layout-header-height, 60px);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
-    padding: 0px 24px;
     display: flex;
     justify-content: center;
 }
@@ -17,6 +16,7 @@
     position: relative;
     height: 100%;
     width: var(--default-layout-width, 1150px);
+    padding: 0 var(--default-layout-spacer);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,24 +114,18 @@
     align-items: center;
 }
 
+.more-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 28px;
+    padding: 4px 8px;
+    background-color: transparent;
+}
+
+// Menu
 .menu-action {
     padding-left: 4px;
     margin-left: 16px;
     font-size: 2rem;
     cursor: pointer;
-}
-.menu-tool {
-    padding-bottom: 8px;
-    font-size: 1.6rem;
-    font-weight: 500;
-    min-width: 223px;
-    background-color: #fff;
-}
-.menu-item {
-    color: rgb(22, 24, 35);
-    padding: 10px 8px 10px 16px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    gap: 8px;
 }
