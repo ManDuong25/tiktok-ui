@@ -129,3 +129,59 @@
     font-size: 2rem;
     cursor: pointer;
 }
+
+// Actions
+.actions {
+    .button-upload {
+        font-size: 1.7rem;
+        height: 36px;
+        font-weight: 500;
+        color: var(--black);
+        border: 1px solid rgba(22, 24, 35, 0.12);
+        border-radius: 2px;
+    }
+    .button-upload {
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+            border: 1px solid rgba(22, 24, 35, 0.12);
+        }
+    }
+}
+
+.inbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.button-message {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+    background-color: #fff;
+    font-size: 20px;
+}
+.notification-message {
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    margin-left: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
